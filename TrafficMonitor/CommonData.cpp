@@ -296,6 +296,8 @@ COLORREF TaskBarSettingData::GetUsageGraphColor() const
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 bool LanguageInfo::operator==(const LanguageInfo& another) const
 {
+    if (isEmpty() && another.isEmpty())
+        return true;
     return bcp_47 == another.bcp_47 && display_name == another.display_name && translator == another.translator;
 }
 
